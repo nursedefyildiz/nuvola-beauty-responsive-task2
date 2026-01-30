@@ -1,0 +1,159 @@
+/* --- GENEL AYARLAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff9fa;
+    color: #5d4037;
+    line-height: 1.6;
+}
+
+/* --- TASK 2.1: NAVBAR --- */
+.navbar {
+    display: flex; /* Elemanları yatayda dizmek için flex kullanıldı */
+    justify-content: space-between; /* Logo ve menüyü iki uca yayar */
+    align-items: center; /* Dikeyde ortalar */
+    padding: 10px 5%;
+    background: #fff;
+    border-bottom: 1px solid #fce4ec;
+}
+
+.nav-logo {
+    height: 55px; /* Navbar yüksekliğini dengeler */
+    width: auto;
+    border-radius: 12px; /* Logonun kenarlarını yumuşatır */
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex; /* Linkleri yan yana dizmek için flex kullanıldı */
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #d81b60;
+    font-weight: 600;
+}
+
+/* --- HERO BÖLÜMÜ (MOBILE FIRST) --- */
+.hero {
+    display: flex; /* İçeriği esnek yapıya kavuşturmak için */
+    flex-direction: column; /* Mobilde her şey alt alta (Mobile First) */
+    align-items: center;
+    padding: 40px 5%;
+    text-align: center;
+    gap: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 420px; /* Görselin aşırı büyümesini engeller */
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    color: #ad1457;
+    margin-bottom: 15px;
+}
+
+/* --- ÜRÜN GRİD SİSTEMİ (CSS GRID) --- */
+.products-grid {
+    display: grid; /* Izgara düzeni oluşturmak için grid kullanıldı */
+    grid-template-columns: 1fr; /* Mobilde tek sütun yapısı */
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #fce4ec;
+}
+
+.card img {
+    width: 100%;
+    height: 250px; /* Tüm ürün resimlerini aynı hizada tutar */
+    object-fit: cover; /* Görseli bozmadan kutuya sığdırır */
+    border-radius: 15px;
+}
+
+/* --- TASK 2.2: GHOST PROTOCOL (FİYATLANDIRMA) --- */
+.pricing-wrapper {
+    display: flex; /* Kartları yan yana getirmek için flex kullanıldı */
+    flex-wrap: wrap; /* Mobilde kartların alt alta düşmesi için */
+    justify-content: center; /* Kartları sayfada ortalar */
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.card-body ul {
+    list-style: none; /* Madde işaretlerinin dışarı taşmasını engeller */
+    padding: 15px 0;
+    margin: 0;
+}
+
+.card-body li {
+    padding: 10px 0;
+    border-bottom: 1px solid #fff5f8;
+    font-size: 0.95rem;
+}
+
+.disabled {
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.btn {
+    display: block;
+    padding: 14px;
+    background: #f06292;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* --- RESPONSIVE (MEDYA SORGULARI) --- */
+@media (min-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet düzeni */
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        flex-direction: row; /* Masaüstünde Yan Yana düzen */
+        text-align: left;
+    }
+
+    .hero-content, .hero-image { flex: 1; }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* Masaüstü 3'lü yapı */
+    }
+}
+
+/* Footer ve Ekstra Linkler */
+footer {
+    text-align: center;
+    padding: 40px;
+}
+
+.price-btn {
+    color: #f06292;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #f06292;
+}
